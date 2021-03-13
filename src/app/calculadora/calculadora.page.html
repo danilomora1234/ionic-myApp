@@ -1,9 +1,36 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button> </ion-back-button>
+    </ion-buttons>
     <ion-title>calculadora</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-label position="floating"><ion-icon></ion-icon>numero 1:</ion-label>
+    <ion-input [(ngModel)]="numero1"></ion-input>
+  </ion-item>
 
+  <ion-item>
+    <ion-label position="floating"><ion-icon></ion-icon>ingrese simbolo de operacion:</ion-label>
+    <ion-input [(ngModel)]="simbolo"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating"><ion-icon></ion-icon>numero 2:</ion-label>
+    <ion-input [(ngModel)]="numero2"></ion-input>
+  </ion-item>
+
+  <ion-button color="warning" (click)="guardar()">
+    <ion-icon name="hand-right-outline"></ion-icon> calcular
+  </ion-button>
+
+  <ion-item>
+    {{this.suma}}
+    {{this.resta}}
+    {{this.multi}}
+    {{this.dividir}}
+  </ion-item>
 </ion-content>
