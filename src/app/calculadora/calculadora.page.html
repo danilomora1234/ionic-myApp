@@ -1,9 +1,7 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button> </ion-back-button>
-    </ion-buttons>
-    <ion-title>calculadora</ion-title>
+    
+    <ion-title><ion-button color="warning" routerLink="/iniciooperaciones"><ion-icon name="home"></ion-icon></ion-button>calculadora</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -27,10 +25,21 @@
     <ion-icon name="hand-right-outline"></ion-icon> calcular
   </ion-button>
 
-  <ion-item>
-    {{this.suma}}
-    {{this.resta}}
-    {{this.multi}}
-    {{this.dividir}}
+  <ion-item >
+   LA SUMA DE {{this.numero1}}+{{this.numero2}} = {{this.suma}}
   </ion-item>
+
+  <ion-item >
+    LA RESTA DE {{this.numero1}}-{{this.numero2}} = {{this.resta}}
+  </ion-item>
+  
+  <ion-item >
+    LA MULTIPLICACION DE {{this.numero1}}*{{this.numero2}} = {{this.multi}} 
+  </ion-item>
+
+  <ion-item >
+    LA DIVISION DE {{this.numero1}}/{{this.numero2}} = {{this.dividir}}
+  </ion-item>
+    
+   
 </ion-content>
