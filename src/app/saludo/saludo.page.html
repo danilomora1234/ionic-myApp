@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+      
+    <ion-button color="warning" routerLink="/iniciooperaciones"><ion-icon name="home"></ion-icon></ion-button>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+      <ion-label position="floating"><ion-icon name="person-circle-outline"></ion-icon>TU NOMBRE:</ion-label>
+      <ion-input [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+  <ion-button color="warning" (click)="guardarSaludo()">
+    <ion-icon name="hand-right-outline"></ion-icon> Saludar
+  </ion-button>
+
+</ion-content>
