@@ -31,6 +31,10 @@ const routes: Routes = [
     path: 'calculadora',
     loadChildren: () => import('./calculadora/calculadora.module').then( m => m.CalculadoraPageModule)
   },
+  {
+    path: 'parcial',
+    loadChildren: () => import('./parcial/parcial.module').then( m => m.PARCIALPageModule)
+  },
 ];
 
 @NgModule({
