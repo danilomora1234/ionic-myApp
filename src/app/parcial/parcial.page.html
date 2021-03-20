@@ -1,18 +1,20 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title><ion-button color="warning" routerLink="/home"><ion-icon name="home"></ion-icon></ion-button>PARCIAL</ion-title>
+    <ion-title><ion-button color="warning" routerLink="/home"><ion-icon name="home"></ion-icon></ion-button>PARCIAL CALCULADORA</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
   <ion-item>
     <ion-label class="value">
-      {{valor}}
+      {{valor}}  
     </ion-label>
   </ion-item>
-  <div *ngFor="let numeroGrupo of gruponumsimbolos">
+  <ion-item *ngFor="let numeroGrupo of gruponumsimbolos">
+  
     <ion-button *ngFor="let numero of numeroGrupo" (click)="onButtonPress(numero)" class="calc-button" color="warning">{{numero}}
 
     </ion-button>
-  </div>
+  </ion-item>
+  
 </ion-content>
