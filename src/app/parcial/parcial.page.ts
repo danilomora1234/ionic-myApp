@@ -9,15 +9,15 @@ import { isNumber } from 'util';
 export class PARCIALPage implements OnInit {
   
 
-  valor = '0';
-  valor1 = '0';
-    operador = 'x';
+  valor = "0";
+  valor1 = "0";
+    operador = "x";
     nuevovalor = true;
     gruponumsimbolos = [
-      [7, 8, 9, '*'],
-      [4, 5, 6, '-'],
-      [1, 2, 3, '+'],
-      [0, 'borrar', '/', '=']
+      [7, 8, 9, "*"],
+      [4, 5, 6, "-"],
+      [1, 2, 3, "+"],
+      [0, "borrar", "/", "="]
     ];
     constructor(public alertController: AlertController,) { }
     ngOnInit() {
@@ -29,11 +29,11 @@ export class PARCIALPage implements OnInit {
       console.log(symbolo);
   
       if (isNumber(symbolo)) {
-        console.log('is a number');
+        console.log("es un numero");
         if (this.nuevovalor)
-          this.valor = '' + symbolo;
+          this.valor = "" + symbolo;
         else
-          this.valor += '' + symbolo;
+          this.valor += "" + symbolo;
         this.nuevovalor = false;
       }
       else if (symbolo === "borrar") {
@@ -41,13 +41,13 @@ export class PARCIALPage implements OnInit {
         this.nuevovalor = true;
       }
       else if (symbolo === "=") {
-        if (this.operador === '*')
+        if (this.operador === "*")
           this.valor = "" + (parseInt(this.valor1) * parseInt(this.valor));
-        else if (this.operador === '-')
+        else if (this.operador === "-")
           this.valor = "" + (parseInt(this.valor1) - parseInt(this.valor));
-        else if (this.operador === '+')
+        else if (this.operador === "+")
           this.valor = "" + (parseInt(this.valor1) + parseInt(this.valor));
-        else if (this.operador === '/')
+        else if (this.operador === "/")
           this.valor = "" + (parseInt(this.valor1) / parseInt(this.valor));
         this.nuevovalor = true;
       }
