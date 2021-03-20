@@ -10,7 +10,9 @@
       {{valor}}
     </ion-label>
   </ion-item>
-  <div *ngFor="let numGroup of gruponumsimbolos">
-    <ion-button *ngFor="let numero of numGroup" (click)="onButtonPress(numero)" class="calc-button">{{numero}}</ion-button>
+  <div *ngFor="let numeroGrupo of gruponumsimbolos">
+    <ion-button *ngFor="let numero of numeroGrupo" (click)="onButtonPress(numero)" class="calc-button" color="warning">{{numero}}
+
+    </ion-button>
   </div>
 </ion-content>
