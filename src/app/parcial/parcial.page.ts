@@ -13,11 +13,11 @@ export class PARCIALPage implements OnInit {
   valor1 = '0';
     operador = 'x';
     readyForNewInput = true;
-    numberGroups = [
+    gruponumsimbolos = [
       [7, 8, 9, '*'],
       [4, 5, 6, '-'],
       [1, 2, 3, '+'],
-      [0, 'borra', '/', '=']
+      [0, 'borrar', '/', '=']
     ];
     constructor(public alertController: AlertController,) { }
     ngOnInit() {
@@ -36,7 +36,7 @@ export class PARCIALPage implements OnInit {
           this.valor += '' + symbol;
         this.readyForNewInput = false;
       }
-      else if (symbol === "borra") {
+      else if (symbol === "borrar") {
         this.valor = "0";
         this.readyForNewInput = true;
       }
@@ -57,6 +57,6 @@ export class PARCIALPage implements OnInit {
         this.operador = symbol;
       }
     }   
-     }
+}
 
 
