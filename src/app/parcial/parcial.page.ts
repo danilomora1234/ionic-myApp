@@ -12,7 +12,7 @@ export class PARCIALPage implements OnInit {
   valor = '0';
   valor1 = '0';
     operador = 'x';
-    readyForNewInput = true;
+    nuevovalor = true;
     gruponumsimbolos = [
       [7, 8, 9, '*'],
       [4, 5, 6, '-'],
@@ -25,22 +25,22 @@ export class PARCIALPage implements OnInit {
   
     
   
-    onButtonPress(symbol) {
-      console.log(symbol);
+    onButtonPress(symbolo) {
+      console.log(symbolo);
   
-      if (isNumber(symbol)) {
+      if (isNumber(symbolo)) {
         console.log('is a number');
-        if (this.readyForNewInput)
-          this.valor = '' + symbol;
+        if (this.nuevovalor)
+          this.valor = '' + symbolo;
         else
-          this.valor += '' + symbol;
-        this.readyForNewInput = false;
+          this.valor += '' + symbolo;
+        this.nuevovalor = false;
       }
-      else if (symbol === "borrar") {
+      else if (symbolo === "borrar") {
         this.valor = "0";
-        this.readyForNewInput = true;
+        this.nuevovalor = true;
       }
-      else if (symbol === "=") {
+      else if (symbolo === "=") {
         if (this.operador === '*')
           this.valor = "" + (parseInt(this.valor1) * parseInt(this.valor));
         else if (this.operador === '-')
@@ -49,12 +49,12 @@ export class PARCIALPage implements OnInit {
           this.valor = "" + (parseInt(this.valor1) + parseInt(this.valor));
         else if (this.operador === '/')
           this.valor = "" + (parseInt(this.valor1) / parseInt(this.valor));
-        this.readyForNewInput = true;
+        this.nuevovalor = true;
       }
       else { // operator
-        this.readyForNewInput = true;
+        this.nuevovalor = true;
         this.valor1 = this.valor;
-        this.operador = symbol;
+        this.operador = symbolo;
       }
     }   
 }
