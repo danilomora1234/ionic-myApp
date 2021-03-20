@@ -4,6 +4,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+  <ion-item>
+    <ion-label class="value">
+      {{valor}}
+    </ion-label>
+  </ion-item>
+  <div *ngFor="let numGroup of numberGroups">
+    <ion-button *ngFor="let num of numGroup" (click)="onButtonPress(num)" class="calc-button">{{num}}</ion-button>
+  </div>
 </ion-content>
